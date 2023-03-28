@@ -1,0 +1,193 @@
+-----------------------------untiltled------------------------------------
+rgb - red green blue - universal colour
+saturation point 0-255 
+  0   0   0  -black
+ 255 255 255 -white
+
+-----------------------------Inline styling-------------------------------
+inside the opening 
+style="color:red;"
+giving the bulletin with starting X in roman letter <ol type="i" start="10"></ol>
+
+-----------------------------Internal styling-----------------------------
+<head> <style>   stling done here   </style> </head>
+
+pc: tag, class, id(collectively calling here as pc(ie;parent child))
+pc{colour:red;
+   text-align: center;
+   border:thickness style colour;
+   border:1px solid red}
+
+border properties(ex) 
+ thickness (1px/2px)
+ styling(
+    solid, 
+    dotted, 
+    doubled, (NOT WORKING)
+    dashed, 
+    groove, 
+    ridge, 
+    inset, 
+    outset, 
+    none, 
+    hidden, 
+    mixed(dotted dashed solid double) (NOT WORKING))
+
+-----------------------------External styling-----------------------------
+styling given in the external js style sheet file
+
+-----------------------------nth child------------------------------------
+name:nth-child(n){
+    color: rgb
+    broder: px solid color
+}
+name can be container or tag but should not be a class or attribute
+
+-----------------------------DOM Styling----------------------------------
+    css selector as csss
+    csss---> ('tag .cn') ('tag.cn')
+    document.querySelector("csss").style.backgroundColor = "anycolor";
+    document.querySelector("csss").style.border = "10px solid red";
+    document.querySelector('csss').style.color='yellow';
+    document.querySelector("csss").innerHTML = "Hello World!";
+    document.querySelectorAll("csss").length
+    ..........................................................................
+    a.style.color='red'; 
+    a.border= '2px solid red';
+    a.style.backgroundColour='pink'; 
+    a.text-align:center; 
+    ..........................................................................
+    let List = document.querySelectorAll("csss");
+    for (let i = 0; i < List.length; i++) {
+      List[i].style.backgroundColor = "red";
+    }
+    ..........................................................................
+    don't's
+    document.querySelector('tag .cn').innerHTML.style.backgroundColor = "red";
+        adding the innerHTML in this line causes error 
+    a.style.background-Color='pink';---> below (adding - hyphen between background and color causes error)
+    a.style.background-color='pink';---> above (small c in color won't change any thing)
+    a.style.backgroundcolor='pink';----> small c in color is wrong
+    a.style.colour='yellow';---> u should be removed
+    a.stylecolor = 'yellow';---> below (missing .) 
+    a.styleColor = 'yellow';---> above (cap letter does't change)
+    a.style.color:'yellow';---> : wrong
+    a.{border-style:solid;}---> using {} is completely wrong. border alone without px,color(error) 
+        {} can be used in internal stylingand external styling but not in inspect->console->IDE
+
+-----------------------------css selectors--------------------------------
+element selector,
+id selector, 
+class slelector, 
+combination selector,
+    descendant selector (space)
+    child selector (>)
+    adjacent sibling selector (+)
+    general sibling selector (~)
+Pseudo-class selectors
+    Style an element when a user mouses over it
+    Style visited and unvisited links differently
+    Style an element when it gets focus
+Pseudo-elements selectors
+    Style the first letter, or line, of an element
+    Insert content before, or after, the content of an element
+Attribute selector
+
+-----------------------------commenting the line--------------------------
+ctrl + / for comment for head and body in html 
+// used inside the script tag
+
+-----------------------------bulleting------------------------------------
+ul= disk, circle, square, none
+
+-----------------------------tags for definition--------------------------
+dl defines a description list
+dt defines a term in description list
+dd describes the term in a description list
+<dl>
+    <dt> coffee </dt>
+    <dd> black hot drink </dd>
+    <dt> milk </dt>
+    <dd> white cold drink </dd>
+</dl>
+
+-----------------------------table----------------------------------------
+adding table in css 4*3-row*coloum
+in it 1st row is heading
+coloum merging - <td colspan="2">data inside the cell</td> vertical
+top and bottom row will be merget in colspan but bottom data will dislocated 
+row merging - <td rowspan="2">data inside the cell</td> horizontal
+right and left coloum will be merget in rowspan but dataat the right will dislocated
+
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+table inline styling methods:
+(inline styling table tag) 
+border style=
+"border:dotted; 
+text-align:center; 
+background-color: brown; 
+color:whitesmoke;"
+
+(inline style in all tags of the table)
+width="" style="border: 1px double black; text-align:center"
+
+we use grid for complex merging instead of table
+
+-----------------------------Lorem ipsum----------------------------------
+it is called as place holder
+place holder used for certain places befoire final copy is available
+certain paces:- use to demonstrate the visual form of a document without relying on meaningful content
+
+-----------------------------q doubt--------------------------------------------
+1. <b> <strong>- similar but found the difference
+2. things that are new in html5 and ES6
+3. rem how many px
+
+-----------------------------form-----------------------------------------
+a simple form structure
+<form action="">
+<input type="email" placeholder="Email or ph. no. required>
+<input type="pasword" placeholder="password" minlength="5" maxlength="7">
+<button type="submit">submit</button>
+
+-----------------------------api------------------------------------------
+developers termology is api in normal it is called as url
+rest api - data can be GET or PUT or POST or DELETE
+normal api - we can only do GET
+
+-----------------------------div, sec, article----------------------------
+these are called as containers
+styling for a container 
+   {padding: top right bottom left}
+
+-----------------------------class & id-----------------------------------
+class: it differentiate between each tag's with other
+
+-----------------------------styling priority-----------------------------
+with the help of general tags 
+with the help of parent-child tags
+with the help of class or id
+with the help of parent-child class
+with the help of attributes tags
+with the help of id
+with the help of nth child concept

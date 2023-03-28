@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form3</title>
+</head>
+<body>
+    <!-- I click event "normal functionas been used"-->
+    <button class="touching">nothing wrong</button>
+    <br>
+    <br>
+    <br>
+    <form action="" id="form_submit">
+        <label for="">Enter Your Name</label><input type="text"><br>
+        <label for="">Enter Your Father Name</label><input type="text"><br>
+        <label for="">Enter Your Adress</label><input type="text"><br>
+        <label for="">Enter Your Phone Number</label><input type="text"><br>
+        <button type="submit">Button</button>
+    </form> 
+    <!-- Notes: form will try to redirect and the current page will reload, 
+                detail in the input box and inspect console will be disappeared. 
+                it can be solved by form action
+         search: find other attributes of form -->
+</body>
+<script>
+    //I click event "normal function" as been used
+    var see=document.querySelector('.touching').addEventListener('click', n_function)
+    
+    // -1- click event - simple event :
+    // function n_function(){console.log('working');}
+    // -2- click event - event trigger this will show/trigger the event properties:
+    function n_function(event)
+    {console.log(event); 
+    console.log('working');}
+</script>
+</html>

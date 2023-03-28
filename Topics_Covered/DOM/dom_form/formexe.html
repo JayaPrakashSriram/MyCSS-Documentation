@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #after_sub, #cant_sub{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <form class="form_sub">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="E-Mail">
+        <input type="text" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="after_sub">
+        <h2 class='cha_cfm'>successfully</h2>
+        <div>
+            <label class="">NAME</label>
+            <label class="o_n"></label><br>
+            <label class="">E-MAIL</label>
+            <label class="o_e"></label>
+        </div>
+    </div>
+
+    <div id="cant_sub">
+        <h2>can't submit</h2>
+    </div>
+</body>
+<script>
+    var cant_sub = document.querySelector('#cant_sub');
+    var after_sub = document.querySelector('#after_sub')
+    var form_sub = document.querySelector(".form_sub");
+    form_sub.addEventListener('submit',(e)=>{
+    e.preventDefault()  
+    var name = document.querySelector('[placeholder="Name"]').value
+    var email = document.querySelector('[placeholder="E-Mail"]').value
+    dis_name = document.querySelector('.o_n')
+    dis_email = document.querySelector('.o_e')
+    if(name!='' && email!=''){
+    console.log("name",name)
+    console.log("email",email)
+    dis_name.innerText = name;
+    dis_email.innerText = email;
+    after_sub.style.display = 'block';
+    cant_sub.style.display = 'none'
+    }else{
+        console.log("can't submit");
+        cant_sub.style.display = 'block'
+    }
+})
+</script>
+</html>

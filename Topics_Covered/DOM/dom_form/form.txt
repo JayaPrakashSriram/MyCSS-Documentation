@@ -1,0 +1,32 @@
+doubts:
+ 1) what are the attributes used inside the input
+ 2) what are the type attribute inside the input
+ 3) what are the attributes of form
+ 4) what are the action attribute's value inside the form
+ 5) preventDefault is a event
+
+--------------------------------------------------------------------------
+difference between inline event and internal/external event:
+inline:body-> button-> onclick="function_n()"
+nal's :script-> var see-> ...addEventListener('click', function_n)
+.............................inline.......................................
+<body>
+<button onclick="function_n()">button</button>
+</body>
+
+<script>
+    function function_n(){
+        console.log('working');
+        }
+</script>
+.............................internal/external............................
+<body>
+<button class="touching">nothing wrong</button>
+</body>
+
+<script>
+var see=document.querySelector('.touching').addEventListener('click', function_n)
+function function_n(){
+    console.log('working');}
+</script>
+--------------------------------------------------------------------------

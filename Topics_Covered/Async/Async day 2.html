@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async day 2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+// Sum 01
+//--- creating a statement in call back function
+// output
+    // I
+    // Want_to
+    // succeed
+    function fun_n(a,b,fun){
+        console.log(a)
+        console.log(b)
+        console.log(fun())
+    }
+    function fun(){
+        return 'succeed'
+    }
+    fun_n('I', 'Want_to', fun)
+// this code won't works if we pass number instead of a,b as perameters 
+//--- inserting the statement inside the body
+var one = document.creatElement('div')
+          one.setAttribute('id', exp);
+document.querySelector('#exp').insertAdjacentElement('afterbegin',fun_n)
+
+// Sum 02
+// example on set time out the output to be delayed for 2 secounds
+// output: 2 sec delay
+function extfun(){
+    console.log('2 sec delay')
+}
+setTimeout(extfun,2000)
+document.creatElement('div').setAttribute('id', exp_two);
+document.querySelector('#exp_two').insertAdjacentElement('afterbegin',extfun)
+
+// Sum 02-b
+// output: 
+    // hi
+    // wel-calm
+    // sorry welcome
+console.log('hi')
+function ano_fun(){
+    console.log('sorry welcome')
+}
+setTimeout(ano_fun,2000)
+console.log('wel-calm')
+document.creatElement('div').setAttribute('id', exp_ano_two);
+document.querySelector('#exp_ano_two').insertAdjacentElement('afterbegin',ano_fun)
+
+
+// Sum 02-c
+// various delayed output
+function all_fun(){
+    
+    function extfun1(){
+        console.log('!');
+    }
+    setTimeout(extfun1, 8000);
+
+    function extfun2(){
+        console.log('hello')
+    }
+    setTimeout(extfun2,2000)
+
+    function extfun3(){
+        console.log('hi')
+    }
+    setTimeout(extfun3,1000)
+    
+    function extfun4(){
+        console.log('welcome');
+    }
+    setTimeout(extfun4,5000)
+    }
+console.log(all_fun())
+document.creatElement('div').setAttribute('id', exp_anoo_two);
+document.querySelector('#exp_anoo_two').insertAdjacentElement('afterbegin',all_fun)
+
+// Sum 03
+// ex for call stack in LIFO
+// output
+    //    4
+    //    3
+    //    2
+    //    1
+function  one(){
+    two()
+    console.log(1)
+}
+function  two(){
+    three()
+    console.log(2)
+}
+function  three(){
+    four()
+    console.log(3)
+}
+function  four(){
+    console.log(4)
+}
+</script>

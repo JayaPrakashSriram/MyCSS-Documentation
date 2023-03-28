@@ -1,0 +1,41 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+       .timer{
+        width: 200px;
+        height:200px;
+        border: 3px solid red;
+        position: relative;
+        left: 50%;
+       }
+    </style>
+</head>
+<body>
+    <p class="timer"></p>
+    <p><label for="hour">00</label> : <label for="mins">00</label> : <label for="sec">00</label></p>
+    <button>start</button>
+    <button>stop</button>
+</body>
+<script>
+//set interval
+// 1. function
+// 2. time- in milli AudioScheduledSourceNode
+// 3. for every time(s) the function will get triggred
+    var timer = setInterval(()=>{
+        console.log(5);
+    },2000)
+
+//set 1 2 3 4... count down
+    var time = 1
+    var timer = setInterval(()=>{
+        document.querySelector('for="sec"').innerHTML = `${time}`
+        time ++
+    },1000)
+    
+</script>
+</html>

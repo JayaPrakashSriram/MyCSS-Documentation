@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagination</title>
+    <style>
+        .parent-pagination{
+            display: flex;
+            justify-content:center;
+        }
+        .pagination{
+            position:fixed;
+            bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- step 1: Create a pagination button inside a div container -->
+<!-- step 2: click properties for previous and next button -->
+<!-- step 3: increase the value of page no. while clicking next button -->
+<!-- step 4: decreasing the value of page no. while clicking previous button -->
+<!-- step 5: setting limit for increase and decrease -->
+<!-- step 5 is not yet implemented -->
+<!-- step 6: getting the data on each page -->
+
+<!-- step 6:---below and below-->
+    <div class="parent_data">
+    </div>
+<!-- step 1: -->
+    <div class="parent-pagination">
+    <div class="pagination">
+            <button class="btn_previous" for="previous">previous</button>
+              <button onclick='child_clicked(this)' class="btn_1" for="1">1</button>
+              <button onclick='child_clicked(this)' class="btn_2" for="2">2</button>
+              <button onclick='child_clicked(this)' class="btn_3" for="3">3</button>
+              <button onclick='child_clicked(this)' class="btn_4" for="4">4</button>
+              <button onclick='child_clicked(this)' class="btn_5" for="5">5</button>
+            <button class="btn_next" for="next">next</button>
+<!-- attribute will be user define here ex:for,name - attribute -->
+<!-- have to attribute in buttons, one for static and for reference and another one for dinamic manipulation purpose -->
+<!-- here attribute class is static, for is dynamic -->
+    </div>
+    </div>
+</body>
+
+<script>
+// step 2:
+var btn_next= document.querySelector('.btn_next')
+var btn_previous= document.querySelector('.btn_previous')
+// step 6:---above and below
+var data=[
+    {
+      "id": "1",
+      "name": "Lura Senger",
+      "email": "Xander_Collier@yahoo.com"
+    },
+    {
+      "id": "2",
+      "name": "Wilburn Weber",
+      "email": "Bennett_Kreiger11@yahoo.com"
+    },
+    {
+      "id": "3",
+      "name": "Tyrique Hahn",
+      "email": "Juston.Altenwerth@yahoo.com"
+    },
+    {
+      "id": "4",
+      "name": "Lenny Bailey",
+      "email": "Guiseppe_Hegmann@yahoo.com"
+    },
+    {
+      "id": "5",
+      "name": "Vladimir Keeling",
+      "email": "Louisa_Walsh18@hotmail.com"
+    },
+    {
+      "id": "6",
+      "name": "Kellie Crona",
+      "email": "Chandler_Abernathy@yahoo.com"
+    },
+    {
+      "id": "7",
+      "name": "Carolina White",
+      "email": "Royal50@hotmail.com"
+    },
+    {
+      "id": "8",
+      "name": "Alfredo Conn",
+      "email": "Clarabelle34@hotmail.com"
+    },
+    {
+      "id": "9",
+      "name": "Stan Shanahan",
+      "email": "Lamar.McClure@hotmail.com"
+    },
+    {
+      "id": "10",
+      "name": "Marvin Fay",
+      "email": "Osbaldo58@hotmail.com"
+    },
+    {
+      "id": "11",
+      "name": "Torrance Rau",
+      "email": "Orin45@gmail.com"
+    },
+    {
+      "id": "12",
+      "name": "Harold Gutmann MD",
+      "email": "Alyce.Stracke37@yahoo.com"
+    }
+]
+// step 6:---above and above
+function child_clicked(e){
+    // console.log('child button clicked');
+    // console.log(e);                                                                  
+
+    document.querySelector('.parent_data').innerHTML=''
+// above step is to make the existing data disappear in the parent_data div when the button is clicked to display the next data
+
+    var for_number =parseInt(e.getAttribute('for'))-1
+    console.log(parseInt(e.getAttribute('for')))
+// to get the for value ex: 1 / 2 / 3 / 4 / 5 / 6....12. this for value is like i -> (a[i])
+
+    var obtained_data= data[for_number]
+    console.log(data[for_number]);
+// to get the userInput ie:data, when the button is clicked. here data[for_number] is like a[i]
+
+    var creating_div =document.createElement('div')
+    creating_div.innerHTML =
+         `  <p for=${for_number}> ${obtained_data.id}</p>
+            <p for='name'>${obtained_data.name}</p>
+            <p for='email'>${obtained_data.email}</p>  `
+
+    document.querySelector('.parent_data').append(creating_div)
+    // console.log('child button clicked')                                                                 
+}
+
+btn_next.addEventListener('click',()=>{
+    console.log('clicked');
+
+                                                                     // ---1a
+    var user_data = data.length
+    var iter_val=(parseInt(user_data/5))*5
+    var mod = user_data%5
+    var res = iter_val+mod
+                                                                     // ---1b
+                                                                     // ---2                                                                
+    for(i=1; i<=5; i++){
+  
+      var taking_for=document.querySelector(`.btn_${i}`)
+    
+      var attribute_val = parseInt(taking_for.getAttribute('for'))
+// use parseInt incase there is integer or Number incase there is decimal 
+    if(iter_val>=attribute_val) {
+//step 3: 
+      var increasing_attribute_val = attribute_val + 5
+
+      taking_for.setAttribute('for',increasing_attribute_val)
+
+      taking_for.innerText = increasing_attribute_val
+
+    }
+  }                                                                 // ---3 
+})
+
+btn_previous.addEventListener('click',()=>{
+    console.log('clicked');
+
+    for(i=1; i<=5; i++){
+
+    var taking_for =document.querySelector(`.btn_${i}`)
+
+    var attribute_val_for = parseInt(taking_for.getAttribute('for'))
+
+    if(attribute_val_for>5){
+// Step 4:
+        var decreasing_attribute_val = attribute_val_for - 5
+
+        taking_for.setAttribute('for',decreasing_attribute_val)
+
+        taking_for.innerText = decreasing_attribute_val
+    }}
+})
+  
+</script>
+</html>
+
+<!-- 1--- a--- var data.length = 92
+          b--- console.log(iter_val);
+               output: 90
+               var check = user_data%5
+               console.log(check)
+               output: 2 -->
+<!-- 2--- var check = user_data%5  01:50hrs in class
+          doucment.querySelector('[for="13"]').remove(); to remove 93,94,95 sir said for loop to be used
+          use continue and break
+            var user_data = 12
+              for(var i=0; i<=user_data; i++){
+              var taking_for=document.querySelector(`.btn_${i}`)
+              taking_for.remove(); -->
+<!-- 3--- var iter_value=(parseInt(user_data/5)+1)*5
+            for(var i=user_data; i<=iter_value; i++){
+          var taking_for = document.querySelector(`.btn_${i}`)
+            taking_for.remove()
+            use continue and break} -->

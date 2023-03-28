@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* #after_submission{
+            display:none;
+        } */
+    </style>
+    <title>Form3</title>
+</head>
+<body>
+            <div>
+                <form id="formsubmission" action=""> 
+                    <input type="text" placeholder="Name"><br>
+                    <input type="text" placeholder="Email"><br>
+                    <input type="text" placeholder="password"><br>
+                    <button type="submit">Button</button>
+                </form>
+            </div> 
+           
+</body>
+<script>
+    var form_submit = document.querySelector('#formsubmission')
+    form_submit.addEventListener('submit',(event)=>{
+    event.preventDefault()
+    var name= document.querySelector('[placeholder="Name"]').value
+    var email= document.querySelector('[placeholder="Email"]').value
+    if (name!=''&& email!=''){
+        var element_creating = document.createElement('div')
+        element_creating.setAttribute('id','after-submission')
+
+        var creating_h2 = document.createElement('h2')
+        creating_h2.innerText = 'u have successfully submitted'
+
+        var creating_status_div = document.createElement('div')
+        creating_status_div.classList.add('status')
+
+        var creating_label_name = documnent.createElement('p')
+        creating_label_name.classList.add('name-field')
+        creating_label_name.innerText = 'your name'
+
+        var creating_label_out_name = document.createElement('label')
+        creating_label_out_name.classList.add('out_name')
+        creating_label_out_name.innerText = name
+
+        var creating_label_email = document.createElement('p')
+        creating_label_email.classList.add('email-field')
+        creating_label_email.innerText = 'your email'
+
+        var creating_label_out_email = document.createElement('label')
+        creating_label_out_email.classList.add('out_email')
+        creating_label_out_email.innerText =email
+
+        creating_status_div.append(creating_label_name)
+        creating_status_div.append(creating_label_out_name)
+        creating_status_div.append(creating_label_email)
+        creating_status_div.append(creating_label_out_email)
+
+        element_creating.append(creating_h2)
+
+        element_creating.append(creating_status_div)
+
+        document.querySelector('body').append(element_creating)
+
+      console.log('form submitted');
+      console.log('name',name)
+      console.log('email',email)
+    }else{
+        console.log("form cannot be submitted with empth field");  
+    }
+})
+</script>
+</html>

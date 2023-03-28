@@ -1,0 +1,100 @@
+sum 01: Fibonacci serious
+
+n = 10
+a = 0
+b = 1
+while(n>2){
+    n-- (or) n = n-1
+    c = a+b
+    console.log(c)
+    a = b
+    b = c
+}
+
+sum 02: Every and Some
+every - in an array if all the element are true the output will be true
+some  - in an array if any one of the element are true the output will be true
+   both will take function as paremeter
+   a = [11,2,0,3,4,3]
+   a.some((a)=>a)---> true
+   a.every((a)=>a+1)---> true
+   a.every((a)=>a)---> false
+      here zero means false
+
+sum03: Printing only negative value
+a = [1,-2,-3,-4,5,6,-7]
+a.forEach(aa,ind,ar)=>{
+
+if(aa>0){
+    for(i=ind+1; i<ar.length; i++){
+        if(ar[i]<0){
+           console.log(ar[i])
+            break
+        }
+    }
+}else{
+    console.log(aa)
+     }
+    console.log('--------')
+})
+
+expected output: printing only -ve value
+-2
+-3
+-4
+-7
+
+sum 04: prime number in function
+var num = function(a){
+    for(var i=2; i<=math.sqrt(ele); i++){
+        if(ele%i===0) return false;
+    }
+    return true;
+}
+return a;
+}
+console.log(num([2,3,4,5,6,7,8,9,10]))
+output: it shows error
+
+sum 05: median in function
+var median = function(a,b,n){
+    var x = 0;
+    var y = 0;
+    var count;
+    var m1 = -1;
+    var m2 = -1;
+for(count=0; count<=n; count++){
+    if(x==){
+        m1=m2;
+        m2=b[0]
+        break;
+    }
+    else if(y==n){
+        m1=m2;
+        m2=a[0];
+        break;
+    }
+    if(a[x]<=b[y]){
+        m1=m2;
+        m2=a[x];
+        x++;
+    }
+    else{
+        m1=m2;
+        m2=b[y];
+        y++;
+        }
+    }
+     return((m1+m2)/2)
+};
+console.log(median([1,2,3,4,5,],[6,7,8,9,10],5))
+output: it shows error
+
+Sum 06: Rotate in function
+var rotate = function(a,k){
+    for(var i=0; i<k; i++){
+        a.unshift(a.pop())
+    }return a;
+}
+console.log(rotate([1,2,3,4,5],3))
+output: [3, 4, 5, 1, 2]

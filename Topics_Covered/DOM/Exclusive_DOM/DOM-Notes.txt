@@ -1,0 +1,104 @@
+(#) DOM files outside DOM folder
+   (.) C:\Users\Sam\Desktop\MyWorks\HTML\stylingNotes.txt -> DOM styling is available
+
+(#) JS stored the data as a object
+
+(#) DOM - Document Object Model:
+    (.) DOM is nothign but a extension of JS\
+    (.) DOM is a object and it contains lot of methods helps to intract with Website
+    (.) Whatever we see in website will be manipulated and changed using DOM. So it is called as 
+representation of website.
+
+(#) new key word:
+    (.) in JS while creating object we use 'new' keyword ex: "new xmlHttpRequest"
+    (.) in JS  the absent of 'new' keyword let to consider the object globaly ie: document
+
+(#)
+function b42(name,age){
+    this.name = name
+    this.age  = age
+}
+    (.) b42      - function name
+    (.) this     - constructor, this represent particular value of the key
+ie, this.name : sri, this represent name as sri
+    (.) name,age - parameters
+    (.) [  [ [body content] -> document]  -> window]
+    (.) [  [document -> document]  -> window] two document inside a window is also possible
+
+(#) properties and methods of HTML DOM Elements aned Documents
+        (-) document.getElementsByTagName('<>/./#')[0]
+        (-) property read only, adding further properties to edit the document
+    (.) getElementByTagName 
+        (-) output:HTML Collection
+    (.) getElementByClassName
+    (.) getElementById
+        (-) output will be unique
+    (.) querySelector
+        (-) document.querySelector('<>/./#')
+        (-) InquerySelector we can use parent child methods
+        (-) Similar to css ie; using of  . #
+        (-) Output will be unique
+        (-) Output will be 1st occured element, multiple output is not possible
+    (.) querySelectorAll
+        (-) all the points are similar to querySelector except multiple output in possible
+    (.) getAttribute
+        (-) document.querySelector('<>/./#').getAttribute('attribute name')
+        (-) giving a value for an attribute
+    (.) setAttribute 
+        (-) document.querySelector('<>/.#).setAttribute('attribute name','attribute value')
+        (-) changing the attribute and value but old value will be removed. 
+        (-) to avoid the removal of old value of class we need to use classList because Id is unique
+    (.) innerText
+        (-) document.querySelector().innerText
+        (-) only reading is possible
+        (-) To get the text alone inside the tag, can't featch if the data is hidden
+    (.) textContent
+        (-) document.querySelector().textContent
+        (-) only reading is possible
+        (-) to get the data inside the tag even it is hidden - {visibility:hidden}
+    (.) innerHTML
+        (-) document.querySelector().innerHTML = <tag class=''> adding content <tag>
+    (.) inserAdjacentElement - before beign, after begin, before end(append), after end
+    (.) append - appendChild
+    (.) classList: add, remove toggle, contains
+    (.) creating - adding - removing
+    (.) traversing in DOM: parentElement, children, previousElementSibiling, 
+    (.) nextElementSibiling, parentElement.parentElement...(if needed we can continue)
+
+(#) Sum's
+    (.) TO check the no. of <li> element - ('tagname').length in the document
+    (.) To add background color
+        Let collection = document.getElementsByTagName('');
+        for(let i=0; i<collection.length; i++){
+            collection[i].style.backgroundColor = "red";}
+
+
+(#) Youtube fastforward setting
+    (.) document.getElementByTagName('video')[0].playback = 5
+
+(#) Difference between Document Object and Element Object
+    (-) returnValue: HTMLCollection         (-) ReturnValue: NodeList
+    (-) when an HTML document is loaded     (-) In the HTML DOM, the element object represent an                                             
+    into a web browser, it becomes a        HTML element like p, div, a, table, or any other HTML 
+    document object.                        element
+    (-) the document object is a property 
+    of the window object
+    (-) the document object is acess with 
+    window.document
+    (-) the document object is the root 
+    node of the HTML document.
+ 
+(#) The Difference Between an HTMLCollection and a NodeList
+    = A NodeList and an HTMLcollection is very much the same thing.
+    = Both are array-like collections (lists) of nodes (elements) extracted from a document. The nodes can be accessed
+by index numbers. The index starts at 0.
+    = Both have a length property that returns the number of elements in the list (collection).
+    = An HTMLCollection is a collection of document elements.
+    = A NodeList is a collection of document nodes (element nodes, attribute nodes, and text nodes).
+    = HTMLCollection items can be accessed by their name, id, or index number.
+    = NodeList items can only be accessed by their index number.
+    = An HTMLCollection is always a live collection. Example: If you add a <li> element to a list in the DOM, the list in the HTMLCollection will also change.
+    = A NodeList is most often a static collection. Example: If you add a <li> element to a list in the DOM, the list in NodeList will not change.
+        = The getElementsByClassName() and getElementsByTagName() methods return a live HTMLCollection.
+        = The querySelectorAll() method returns a static NodeList.
+        = The childNodes property returns a live NodeList.

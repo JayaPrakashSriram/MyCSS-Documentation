@@ -1,0 +1,5 @@
+JS(doubt clarification session) 01/12/22
+- Async Avait will over come the xml HTTP request
+            Async - Api call
+            Avait - Logic
+            

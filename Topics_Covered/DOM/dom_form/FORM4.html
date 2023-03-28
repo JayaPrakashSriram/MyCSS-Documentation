@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #after_submission{
+            display:none;
+        }
+    </style>
+    <title>Form4</title>
+</head>
+<body>
+     <!-- II submit event "arrow functionas been used"
+        step 1    creating a form 
+        step II   prevent default form action should be done and before it complete step III  
+        step III  to display some thing for user, about the submission done. <br>
+                  adding h2 and four labletag(name,Email). 2 for attribute and 2 for value
+        step IV   to avoid h2 to be showned before submitting the form .<br>
+                  for that add a attribute to div, give styling in head-style-attribute-none <br>
+                  and the div id after_submission will be disapperared,<br>
+                  to make it visible after submission we have to make it as block in<br>
+                  arrow function inside the script.
+        step V    form_submit.addEventListener('submit',()=>{   .<br>
+                  The above line was added with event.<br>
+                  The event is added to prevent default ie: loading to the same page or new page
+        step VI   to get the name and other data of the form as output.<br>
+                  why value and why not innerText -> innerText gives the content between the tags as result.<br>
+                  but in value we get the result of attribute and value.<br>
+                  use console for name and email to get the form result.<br>
+                  in css we use square brackets for attributes
+        step VII  to display the data input inside the form, below this statement-> u have successfully submitted
+        step VIII after step VII adding colour to that data
+        step IX   creat condition to warn for submiting empty application through if condition
+        step X    creating a condition in else statement to warn for empty submission
+        step XI   to display the else condtion in user interface by using innerHTML and display="block"
+        step XII  to hide the key attribute's of the form
+        step XIII  to replace the else statement in user interface when the if condition is satisfied
+
+    -->
+            <div>
+                <form id="formsubmission" action=""> 
+                    <input type="text" placeholder="Name"><br>
+                    <input type="text" placeholder="Email"><br>
+                    <input type="text" placeholder="password"><br>
+                    <button type="submit">Button</button>
+                </form>
+            </div> 
+            <!-- III... -->
+            <!-- IV...below & below -->
+            <div id="after_submission">
+                <h2>u have successfully submitted</h2>
+                <div id="display_key">
+                    <lable class=''>Your Name</lable>
+                    <lable class="out_name"></lable><br>
+                    <lable class=''>Your Email</lable>
+                    <lable class="out_Email"></lable><br>
+                </div>           
+                </div> 
+            
+
+                
+</body>
+<script>
+
+    //II submit event "arrow functionas been used"
+    //I...
+    var form_submit = document.querySelector('#formsubmission')
+    //IV...above & below
+    var after_submission = document.querySelector('#after_submission')
+    //VII...below
+    var adding_name = document.querySelector('.out_name')
+    var adding_email = document.querySelector('.out_Email')
+    //XI...below
+    var form_status = document.querySelector('#after_submission h2')
+    //V...below
+    //below commented line is normal function 
+    //(note: comment the closing paranthesis at the end of the code if uncomment the normal function)   
+        //form_submit.addEventListener('submit',form_normal_fun1)
+        //function form_normal_fun1(event){
+    form_submit.addEventListener('submit',(event)=>{
+    event.preventDefault()
+    //VI...below 
+    var name= document.querySelector('[placeholder="Name"]').value
+    var email= document.querySelector('[placeholder="Email"]').value
+    //XII...below
+    var display_key=document.querySelector('#display_key')
+
+    //IX...
+    if (name!=''&& email!='')//---> null can also be given
+    { //XIII...
+      form_status.innerHTML="u have successfully submitted";
+      //V...above
+      console.log('form submitted');
+      //IV...above & above    ?????check this order
+      after_submission.style.display ='block';
+      //VI...above
+      console.log('name',name);
+      console.log('email',email);
+      //VII...above
+      adding_name.innerText = name
+      adding_email.innerText = email
+      //VIII... 
+      adding_name.style.color = 'red'
+      adding_email.style.color = 'red'
+      //XIII...
+      display_key.style.display='block';
+    }else{
+      //X
+        console.log("form cannot be submitted with empth field");
+      //XI...above
+      form_status.innerHTML="form cannot be submitted with empth field";
+      after_submission.style.display ='block';
+      //XII...above
+      display_key.style.display='none';  //display_key.remove();
+    }
+    //these operation will be seened in crud- creat read update delete
+    //this is dom 3 class revision starts from 01:20 - 01:28
+    //to do list will be created in asink with local storage facility
+    //addEventListener can't be used for an empty tag, ie.if the querySelector...down 
+//value or tag is empty then it throws the error - "can't read the properties of null"
+//flex is more advance than float or replace the float
+//grid can use to creat the containers and flex is used to positioning the grid/container
+
+    }
+    )
+</script>
+</html>

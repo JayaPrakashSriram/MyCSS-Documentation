@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async day 3</title>
+</head>
+<body>
+    <h1>hello</h1>
+</body>
+</html>
+<script>
+    var new_tag = document.creatElement('div')
+    new_tag.innerHTML = <h2>is it working</h2>
+
+// Sum 01
+    var body_data = document.querySelector('body')
+    console.log('hi')
+    function extfun1(){
+        var child_ele = document.createElement('p')
+        child_ele.innerText='welcome'
+        body_data.inserAdjucentElement('afterbegin',child_ele)
+        console.log('result .4')
+    }
+    setTimeout(extfun1,4000)
+
+// Sum 02: clearTimeout ex:
+    function fun_n1(){
+        console.log('and')
+    }
+    function fun_n2(){
+        console.log('i am')
+    }
+    function fun_n3(){
+        console.log('iron man')
+    }
+    function fun_n4(){
+        console.log('.')
+    }
+    var check1 = setTimeout(fun_n1, 1000)
+    var check2 = setTimeout(fun_n2, 2000)
+    var check3 = setTimeout(fun_n3, 3500)
+    var check4 = setTimeout(fun_n4, 4000)
+    clearTimeout(check1)
+
+//  Sum 03 a: clearTimeout ex:
+    var body_data = document.querySelector('body')
+    function extfun1(){
+        var child_ele = document.creatElement('p')
+        child_ele.inner.text = 'Welcome'
+        body_data.insertAdjacementElement('afterbegin',child_ele)
+        // console.log('trigger')
+    }
+
+//  Sum 03 b:
+    var name = 'hell'
+    if (name == 'hello'){
+        var welc = setTimeout(extfun1,2000)
+        // console.log('show welocme')
+    }
+    else{
+        // console.log("don't show welcome")
+    }
+   
+//  Sum 03 c:
+    var body_data = document.querySelector('body')
+    function extfun1(){
+        var child_ele = document.creatElement('p')
+        child_ele.inner.text = 'Welcome'
+        body_data.insertAdjacementElement('afterbegin',child_ele)
+        // console.log('trigger')
+    }
+    var welc = setTimeout(extfun1,2000)
+    name1 = 'magesh'
+    if (name1 == 'hello'){
+        //var welc = setTimeout(extfun1,2000)
+        console.log('show welcome')
+    }
+    else{
+        clearTimeout(welc)
+        console.log("don't show welcome")
+    }
+
+// Sum setInterval ex:
+// setInterval
+// setInterval()=>{
+//     console.log(5);
+//    },2000)
+</script>

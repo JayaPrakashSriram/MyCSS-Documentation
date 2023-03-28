@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practise</title>
+    <style>
+    input{
+            margin: 10px;
+    }
+    th,td{
+        border: 3px solid red;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <form action="" id="form_submit">
+        <label for="">Enter your first name</label><input type="text" placeholder="first name"><br>
+        <label for="">Enter your last name</label><input type="text" placeholder="last name"><br>
+        <label for="">Enter your Gender</label><input type="text" placeholder="gender"><br>
+        <label for="">Enter your address</label><input type="text" placeholder="address"><br>
+        <label for="">State / Country</label><select>
+            <option value="">State</option>
+            <option value="">country</option>
+        </select>
+        <br>
+        <button>submit</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>Gender</th> 
+            <th>adress</th>
+        </tr>
+    </table>
+</body>
+
+<script>
+var form_submit= document.querySelector('#form_submit')
+form_submit.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    var firstName = document.querySelector('[placeholder="first name"]')
+    var lastName = document.querySelector('[placeholder="last name"]')
+    var gender = document.querySelector('[placeholder="gender"]')
+    var address = document.querySelector('[placeholder="address"]')
+    console.log('form submitted');
+    console.log(firstName,lastName,gender,address)
+    // var count=[firstname,lastname,gender,address]
+    // var count_check =0
+    // for (let i of count){
+    //     if(i){
+    //         count_check++
+    //     }
+    // }
+    // if(count_check>=2){
+
+    // }
+    // console.log("count_check", count_check);
+    // if(firstname!='' && lastname!='' && gender!='' && address!=''){
+// };
+var creating_tr = document.createElement('tr')
+var datas = [firstName,lastName,gender,address]
+
+for (i=0; i<4; i++){
+    var creating_td = document.createElement('td')
+creating_td.innerText=datas[i].value
+creating_tr.append(creating_td)
+}
+// var creating_td_firstname = document.createElement('td')
+// var creating_td_lastname = document.createElement('td')
+// var creating_td_gender = document.createElement('td')
+// var creating_td_address = document.createElement('td')
+
+// creating_td_firstname.innerText = firstname
+// creating_td_lastname.innerText = lastname
+// creating_td_gender.innerText = gender
+// creating_td_address.innerText = address
+
+// creating_tr_append(creating_td_firstname)
+// creating_tr_append(creating_td_lastname)
+// creating_tr_append(creating_td_gender)
+// creating_tr_append(creating_td_address)
+
+document.querySelector('tbody').append(creating_tr)
+for(let i of data){
+    i.value=''
+}
+
+});
+</script>
+</html>
+

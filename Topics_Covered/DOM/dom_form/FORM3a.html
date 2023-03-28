@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-3a</title>
+</head>
+<body>
+    <!-- exe 1 -->
+    <!-- <form onKeyPress="submission()" action=""> -->
+    <!-- exe 2 -->
+    <form id="submission" action="">               
+
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="password">
+        <button type="submit">Button</button>
+    </form> 
+</body>
+<script>
+    // function submission(){
+    // console.log('working');  //---exe 1
+    // }
+
+    var see=document.querySelector('#submission').addEventListener('KeyPress', n_function)
+    function n_function(){            //---exe 2
+    console.log('working');
+    }
+</script>
+</html>

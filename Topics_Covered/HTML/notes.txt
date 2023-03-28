@@ -1,0 +1,63 @@
+//Class Task:
+  <p> Use certain HTML elements to display the following in a HTML page.</p>
+    <ul type="disk"> 
+     <li> Pogramming Language</li>
+       <ul type="circle"> 
+        <li>JavaScript</li>
+          <ol type="a">
+           <li>Angular</li>
+           <li>React</li>
+           <li>Vue.js</li></ol>
+        <li>Python</li>
+          <ol type="a">
+           <li>Django Framework</li>
+           <li>Flash Framework</li>
+          </ol>
+        <li>Java</li>
+        <ol type="a">
+           <li>Spring</li>
+           <li>Maven</li>
+           <li>Hibenate</li></ol>
+       </ul>
+
+     <li> Database</li>
+     <ul type="circle"> 
+       <li>MySQL</li>
+       <li>MongoDB</li>
+       <li>Cansandra</li></ul></ul>
+       </p>
+
+       <h1>day2 html practise</h1>
+<thead>
+    <tr>
+        <th>da1</th>
+        <th>da2</th>
+        <th>da3</th>
+    </tr>
+</thead>
+<tr>
+<td>da4</td>
+<td>da5</td>
+<td>da6</td>
+</tr>
+<tr>
+<td>da7</td>
+<td>da8</td>
+<td>da9</td>
+</tr>
+<tr>
+<td>da10</td>
+<td>da11</td>
+<td>da12</td>
+</tr>
+<tr>
+<td>da13</td>
+<td>da14</td>
+<td>da15</td>
+</tr>
+<tr>
+<td>da16</td>
+<td>da17</td>
+<td>da18</td>
+</tr>
+       

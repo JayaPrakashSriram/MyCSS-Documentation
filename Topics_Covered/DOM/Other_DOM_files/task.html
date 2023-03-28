@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+    <style>
+        input{
+margin: 10px;}
+        th,td{
+border: 3px solid yellow;
+padding: 10px;
+/* margine won't work in tabel */
+        }
+    </style>
+</head>
+<body>
+    <div class=""form">
+        <form action="" id="form_submit">
+            <label for=""">Enter our First Name</label>
+                <input type="text" placeholder="First Name"><br>
+            <label for=""">Enter our Last Name</label>
+                <input type="text" placeholder="Secound Name"><br>            
+            <label for=""">Enter our Address</label>
+                <input type="text" placeholder="Address"><br>            
+            <label for=""">Enter our City</label>
+                <input type="text" placeholder="City"><br>
+            <button type="submit">submit</button>
+        </form>   
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Secound Name</th>
+                <th>Address</th>
+                <th>City</th>
+            </tr>
+        </thead>
+
+        <tbody>
+         
+        </tbody>
+    </table>
+</body>
+<script>
+    var form_submit = document.querySelector('#form_submit')
+
+    form_submit.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    var firstname = document.querySelector('[placeholder="First Name"]')
+    var secoundname = document.querySelector('[placeholder="Secound Name"]')
+    var address = document.querySelector('[placeholder="Address"]')
+    var city = document.querySelector('[placeholder="City"]')
+    console.log('form submitted successfully')
+    console.log(firstname, secoundname, address, city);
+    var datas = [firstname, secoundname, address, city]
+
+    // var count_check = 0
+    // for (let i of count){
+    //     if(i){    //if(count_check>=2)
+    //     count_check++
+    //     }
+    // }
+    // console.log('count_check',count_check)
+    // if(firstname!=null && secoundname!=null && address!=null && city!=null){
+    // }
+
+    var creating_tr = document.createElement('tr')
+    for (i=0; i<4; i++){
+        var creating_td = document.createElement('td')
+        creating_td.innerText = datas[i].value
+        creating_tr.append(creating_td)
+    }
+
+    // var cre_td_fn = document.createElement('td')
+    // var cre_td_ln = document.createElement('td')
+    // var cre_td_ad = document.createElement('td')
+    // var cre_td_c = document.createElement('td')
+
+    // cre_td_fn.innerText = firstname
+    // cre_td_ln.innerText = secoundname
+    // cre_td_ad.innerText = address
+    // cre_td_c.innerText = city
+
+    // creating_tr.append(cre_td_fn)
+    // creating_tr.append(cre_td_ln)
+    // creating_tr.append(cre_td_ad)
+    // creating_tr.append(cre_td_c)
+
+   document.querySelector('tbody').append(creating_tr)
+
+   for(let i of datas){
+        i.value = ''
+   }
+})
+</script>
+</html>

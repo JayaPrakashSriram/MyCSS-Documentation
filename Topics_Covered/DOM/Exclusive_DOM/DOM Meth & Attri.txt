@@ -1,0 +1,103 @@
+-----------------------------DOM methods----------------------------------
+.getElementsByClassName('cn')<---value of cn
+    the cn should be a class name, 
+    two class name can't be included inside the paranthesis,
+    dot should be writen before the cn ex ('.cn').
+.getElementsByTagName('tn')<---value of tagname
+    the tn should be a tag, 
+    two tag can't be included inside the paranthesis,
+    only the tn should be written.
+.getElementById('id')<--- value of id
+    here Element not Elements
+    inside the paranthesis id value should be mentioned
+    two id can't be included inside the paranthesis,
+    only the tn should be written, don't do it('#id')
+
+examples in combination of getElement or (s)
+expected output navigation menu ('it is a string inside a h2 tag')
+
+
+        exI-1:var a = document.getElementById("mw-navigation");
+                      a.getElementsByTagName("h2");
+                      console.log(a.innerText.length);
+              output:584 (those no. represents the count of individual strings)
+                         (output doesn't change if we remove the secound property, so 2nd property is use less)
+             action1: (removed property length in console)
+              output: (584 lines of strings, 2nd property is use less)
+             action2: (2nd property as been removed)
+              output: (584 strings as output but a "/" inbetween them, ex: string1/string2/../stringn)
+             action3: (property innerText as been removed)
+              output: (entire html code under the Id of #mw-navigation as been displayed)
+                      (output doesn't change while we remove variable the declaration)
+                type:object
+              exI-1a:document.getElementById("mw-navigation").getElementsByTagName('h2');
+             action4: (adding getElementsByTagName("h2"))
+              output:HTMLCollection [h2]0 : h2
+                     length               : 1
+                     [[Prototype]]        : HTMLCollection
+             action5: (adding the property innerText at the end)
+              output:undefine
+              exI-1b:document.getElementById("mw-navigation").getElementsByTagName('h2')[0];
+             action6: (removed the property innerText and adding: [0])
+              output:<h2>​Navigation menu​</h2>​
+             action7: (adding the property innerText at the end)
+              output:'Navigation menu'
+
+        exI-2:var a = document.getElementById("mw-navigation");
+              var b = [];
+                      b.push(a);
+                      console.log(b);
+             output:(event like output as been displayed in object formate ie:key:value pairs
+                    innerHTML:(output of example5 as value here)
+                    innerText:(output of example1 as value here))
+        
+..........................................................................
+
+.querySelector('csss')
+.querySelectorAll('csss')
+    csss---> ("tag.cn"); ("tag[attribute]") ("tag, tag")
+
+examples in combination of getElement or (s) and querySelector 
+        exII-1:document.getElementById("mw-navigation").querySelector("h2");
+        output:<h2>Navigation menu</h2>
+       action1: (adding [0] at the end)
+        output:undefine
+       action2:(adding the innerText at the end)
+        output:Uncaught TypeError: Cannot read properties of undefined (reading 'innerText')
+       action3: removing [0]
+        output:Navigation menu
+
+diference between using of getElementsByTagName and querySelector and querySelectorAll as 2nd attribute 
+        document.getElementById("mw-navigation").getElementsByTagName("h2")[0].innerText;
+        output:'Navigation menu'
+        document.getElementById("mw-navigation").querySelector("h2").innerText;
+        output:'Navigation menu'
+        document.getElementById("mw-navigation").querySelectorAll("h2")[0].innerText;
+        output:'Navigation menu'
+
+examples in combination of getElement or (s) and querySelectorAll     
+        
+..........................................................................
+Combination of two getElement or (s) and combination of getElement or (s) and querySelector is possible.
+In getElement or (s) we can use the properties of read and write such as innerHTML, innerText, textContent.
+innerHTML will replace the selected html element with new element
+..........................................................................
+document.getElementById("firstHeading").querySelectorAll(".mw-page-title-main")[0].innerText='namastha';
+(changing the name india to some thing else in the wiki india)
+
+(done in https://indiancc.nic.in/)
+document.getElementsByClassName('logo')[0].querySelector('.logo_text').innerHTML= "<h2 class='nnew'> 'i failed in ncc' </h2>";
+(replaces the entire innerHTML element)
+
+document.getElementsByClassName('logo')[0].querySelector('.logo_text')---> following are the styling given to this line
+.style.backgroundcolor="red";
+.style.border="10px solid blue";
+.style.color="yellow"
+
+<h2 class="nnew" style="background-color: red; border: 10px solid blue; color: yellow;"> 'i failed in ncc' </h2>
+document.querySelector('.nnew').getAttribute('style');
+output:'background-color: red; border: 10px solid blue; color: yellow;'
+(it is the styling given by me as above)
+
+document.querySelector('h2').setAttribute('class','oold');
+
