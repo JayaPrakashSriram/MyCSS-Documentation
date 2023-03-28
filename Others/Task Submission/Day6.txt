@@ -1,0 +1,11 @@
+Q1 https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+Q2 https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+Q3 Write a “person” class to hold all the details.
+Q4 write a class to calculate the uber price.
+
+q1 Practice(submission not needed)-https://medium.com/@reach2arunprakash/www-guvi-io-zen-d395deec1373
+q2 https://medium.com/@reach2arunprakash/guvi-zen-class-find-the-culprits-and-nail-them-9ee6c67c44fb
+q3 https://medium.com/@reach2arunprakash/www-guvi-io-zen-4fa483a7d359
+q4 https://medium.com/@reach2arunprakash/guvi-zen-simple-debugging-tasks-adcdc2d3249d
+
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>HTMLD1&D8RM by Magesh Ashok</title>
+</head>
+<body>
+   <p>Why we have to use LiveServer in VSCode? <br>
+          Because we no need to refresh every time we made changes.
+   </p>
+<h1>HTML - Hyper Text Markup Language:</h1>
+     
+     <ol><li>  HTML is a Markup Language.                                                </li>
+         <li>  Skeleton of HTML is head and body, also be said as skeleton of website.   </li>
+         <li>  HTML is Non-White Space Sensiive.                     <br> 
+               hiii...       i...     think, i am in love with you.  <br>     
+               We need to use the CSS to give a long blank space.                       </li>
+         <li>  All the data should be inside the tag of HTML.                           </li>
+         <li>  All the elements should be inside the tags.                               </li>
+     </ol>
+
+<h3>Other Important Points:</h3>
+     <ol> <li>Website - http://www.guvi.com  
+        <a href="https://www.guvi.in/build/images/foot-guvi-logo.a4e6ed37ef51b4ab25d3123efba35271.png">guvi-logo</a></li> 
+            <li><img src="https://www.guvi.in/build/images/foot-guvi-logo.a4e6ed37ef51b4ab25d3123efba35271.png"> </li>                          </li>
+          <li>Webpages - https://www.guvi.com/(courses)                                 </li>
+          <li>Domain Name - guvi.com                                                    </li>
+     </ol>
+
+<h1>Skeleton of HTML:</h1>
+     <ol> <li>Head  </li> 
+          <li>Body  </li>
+          <li>Tag   </li>
+          <li>Attributes & Values</li>
+     </ol>
+
+<h2>HEAD</h2>
+     <ol> <li>External Style, all the Internal Stylings, External Reference Link, Favicon, Text Style(Fount), Meta Tags are placed inside the header.</li>
+          <li>The data inside the Head will not be seened by users.</li>
+          <li>Template:</li>
+     <ul> <li>meta</li>
+     <ul> <li><*meta> used to insert Additional Information</li>
+          <li><*meta charset="UTF-8"></li>
+          <li>UTF - Universal Text Formate</li>
+          <li>Changing the data from Human Readable to Meachine Understandable Formate </li>
+          <li><*meta http-equiv="X-UA-Compatible" content="IE=edge"></li>
+          <li>Make the data cometable to all websites</li>
+          <li><*meta name="viewport" content="width=device-width, initial-scale=1.0"></li>
+          <li>make competable to all devise screen ratio. ie. screning</li>
+          <li>ex for meta is google analyics which was used by guvi. it is a js script, which was programed to collect user data</li>
+     </ul>
+     </ul>
+     <ul> <li>title</li>
+     <ul> <li><*title> the text here will be displayed near the favicon</li>
+          <li><*title>b42<*/title></li>
+          <li><*title><*/title> those are tags</li>
+          <li>b42   those are elements</li>
+     </ul>
+     </ul>
+     </ol>
+
+<h2>BODY</h2>
+          <li>all the data that user sees. Inside body everything is segrecated as elements and tags</li>
+          <li>body tag is a parent for p tag</li>
+
+<h2>Tag Types:</h2>
+     <ol> <li>Opening Tag<>,</li>
+          <li>Closing Tag<*/>,</li> 
+          <li>Self Closing Tag -> meta, hr, br, <*img src="" alt="">. </li>
+     <ul> <li>If the tag is not having Closing Tag, then it is a Self Closing Tag.</li>
+     </ul>
+          <li>Block Tag / Block Level Element:</li>
+     <ul> <li>h      - Heading(h1 to h6)</li>
+          <li>p      - Para</li>
+     <ul> <li>Two Para Tag content won't be displayed in the same line in the Web Page. </li>
+          <li> Because it is a Block Tag.</li>
+     </ul>
+          <li>hr     - Horizontal Line</li>
+          <li>br     - Break</li>
+     </ul>
+          <li>Inline Tag / Inline Level Element:</li>
+     <ul> <li>a      - Anchro  </li>
+     <ul> <li> links type: redirection, rendering, hyperlink</li>
+          <li><*a href="/index.html">create a html file<*/a></li>
+          <li>when a ancore tag is left empty without any redirection or render link then it will load the same page.</li>
+          <br>
+          <li><*a href="">empty<*/a>   //1</li>
+          <li><*a href="#">empty<*/a>  //2</li>
+          <li>both 1 and 2 end up in the same result</li>
+          <br>
+          <li><*a href="/index.html">Index<*/a></li>
+          <li>when we have the redirection page in the same folder then use "/name"</li>
+          <li>/ it denotes that the page is in the same folder</li>
+          <li>if not then right click the html page name in the list</li> 
+          <li>-> select copy relative path</li>
+          <li>-> past it inside the double quotes</li> 
+          <br>
+          <li>Redirection and Rendering</li>
+          <li>(href is not only for hyper link, it as been used for redirecion purpose also.???)</li>
+          <li>opening the page that is inside the parent document itself is called as rendering</li>
+          <li>ex: <*a href="/index.html">Index <*/a></li>
+          <li>opening the page, ie. a external link or the page out side the mother document is called as redirection</li>
+          <li>ex: <*a href="https://www.google.com">Google <*/a></li>
+          <li>(we should not use user-define attribute for redirection purpose???)</li>
+     </ul>
+          <li>img    - Image   </li>
+     <ul> <li><*img src="" alt=""> ex: alt="profile pic"</li>
+     </ul>
+          <li>label  </li>
+     <ul> <li>label tag used between the paragraph to enter a small data.</li>
+     </ul>
+     </ul>
+     </ol>
+
+<h3>Block & Inline Element</h3>
+          <li>Block Element will consume the entire width of the parent</li>
+          <li>Inline Element take the size of the data that we give</li>
+     <ul type="circle"> <li>We can use a inline tag in block tag ex: <*lable> in <*p> but can't be wiseversa or logicaly false.</li>
+          <li>In this world love is everything, <lable>but love sucks</lable> without it nothing can have pupose, and nothing can survive.<br>
+              (usage of lable tag in block tag)</li>
+          <li> we can't add a block element near to the inline element and wiseversa.</li>         
+     </ul>
+
+<h2> Attributes & Values</h2>
+          <li>Additional information to that tag</li>
+          <li>To differienciate b/w other tags</li>
+          <li>Any thing inside the "opening-tag" except the tag name </li>
+          <li><*p for="" name="love" title="" ><*/p> here name = attribute & love = value</li>
+          <li>Always use double quotes for value of an attribute.</li> 
+          <li>Ex: name: "love"</li>
+
+<h4>additional data</h4>
+          <li>to find the fount family sutablility search:mdn web doc-> in theam search box  </li>
+          <li>pointing the mouse on block level or inline level elements are called hover</li>       
+
+<h3>Q&A</h3>
+     <ol type="Decimal"> <li>Differene between website, webpage and domain name</li>
+          <li>Skeleton of HTML</li>
+          <li>Content inside the head and its uses</li>
+          <li>use of meta</li>
+          <li>UTF abbrevation, purpose</li>
+          <li>meta tags on competability</li>
+          <li>inside the title tag is know as</li>
+          <li>elements, value, attributes</li>
+          <li>example for parent and child tags</li>
+          <li>types of tags</li>
+          <li>list:- self closing tags, Block level element, Inline level element</li>
+          <li>if the tag is not having closing tag then it is a _________</li>
+          <li>hn - n - start to end</li>
+          <li>two or more _____ tag which can't be displayed in the same line in the web page for html</li>
+          <li>abbrivation for the following tags h p hr br</li>
+          <li>types of link</li>
+          <li>when a ancore tag is left empty without any redirection or render link then what will happen next </li>
+          <li>usage of / in href,in href where to use</li>
+          <li>difference between redirection and rendering</li>
+          <li>usage of lable tag</li>
+          <li>how to display a text in image container when the image gets a error unavailable to load</li>
+          <li>define inline and block element</li>
+          <li>usage of block level and inline level elements in same line</li>
+          <li>anthing inside the "opening-tag" except the tag name</li>
+          </li>
+    </ol>
+
+           <li>Doubt:- Q) see class for attribute and value, Q) redirection, rendering, hyperlink</li>
+
+<img src="https://www.guvi.in/build/images/foot-guvi-logo.a4e6ed37ef51b4ab25d3123efba35271.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+<img src="https://www.guvi.in/build/images/zenliveclasss.d5e74596e53cfb6e0f17061594c87f64.png">
+</body>
+</html>
