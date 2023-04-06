@@ -1,0 +1,20 @@
+.button{
+  background-color: #0000008e;
+  border-radius: 10px;
+  padding: 1px 5px 5px 5px;
+  margin-left: 5px;
+}
+
+.inputBox{
+  padding: 5px;
+  margin: 50px 0px 0px 25px;
+  border-radius: 10px;
+}
+
+.entireStru{
+  display:flex;
+  flex-direction:column;
+  align-items: start;
+  height: 100vh;
+  width: 100vh;
+}
