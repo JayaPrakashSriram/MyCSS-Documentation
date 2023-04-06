@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import "./App.css";
 
 export default function App() {
@@ -25,12 +26,22 @@ export default function App() {
       </div>
   );
 }
-
+function Counter(){
+  const[like, setLike] = useState(0);
+  const[disLike, setDisLike] = useState(0);
+  return(
+     <div>
+           <button onClick={() => setLike (like + 1)}>like{like}</button>
+           <button onClick={() => setDisLike (disLike + 1)}>like{disLike}</button>
+     </div>
+    )
+}
 function New({persons, pic}) {
   return(
     <div>
       <img className ='pict' src = {pic} alt = {persons}/>
       <h1>Honorable, <span className='red'>{persons}</span></h1>
+      <Counter/>
       </div>
   )
 }
