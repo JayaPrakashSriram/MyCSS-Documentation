@@ -3,3 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+#breweryname, #brewerytype, #breweryaddress, #phnumber, #brewerywebsite {
+    color: #d8a60f;
+}
