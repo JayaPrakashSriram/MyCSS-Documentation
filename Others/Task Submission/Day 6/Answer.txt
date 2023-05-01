@@ -1,0 +1,44 @@
+ Outputs:
+  1st task:
+    a:  Movie_One {
+          Title: 'The Dark Knight',
+          Studio: 'DC Comics',
+          Rating: 'Pg13' 
+        }
+  
+    b:  Movie_Two { 
+          Title: 'Ant Man',
+          Studio: 'Marvel', 
+          Rating: 'PG' 
+        }
+  
+    c:  [ 'Ant Man', 'Punisher', 'DareDevil' ]
+  
+    d:  Mov_Name {
+          Title: 'Casino Royale',
+          Studio: 'Eon Productions',
+          Rating: 'PG-13' 
+        }
+
+  3rd Task:
+  
+    Info {
+      FirstName: 'Saravana',
+      LastName: 'Kumar',
+      Age: '32',
+      Gender: 'Male',
+      Education: 'Real Estate & Construction',
+      Profession: 'Single',
+      MaritalStatus: '9852616618',
+      Contact: 'Civil Engineer' 
+    }
+
+  4th task:
+  
+    UberPrice {
+      pasangerName: 'Surya',
+      pickup: 'Ambattur',
+      drop: 'Meenambakkam',
+      distance: '20',
+      amount: 200 
+    }
