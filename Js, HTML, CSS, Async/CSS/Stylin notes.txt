@@ -1,0 +1,105 @@
+=> Flex:
+
+                    | display:Flex;
+                    | align-items:center; 
+                    | justify-content:center;
+
+        - align-items:center; -> Used to get Vertiacal Center
+        - justify-content:center; -> Used to get horizontal Center
+
+=> Grid:
+        - Fr:
+            Fr - Frctional unit
+            1Fr - 1 part of the avaiable space
+                    | display: grid;
+        
+        - grid-template-columns, can be used in several ways
+        https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+        https://www.digitalocean.com/community/tutorials/css-css-grid-layout-fr-unit
+                    | grid-template-columns: 60px 60px;
+                    | grid-template-columns: 1fr 60px;
+                    | grid-template-columns: 1fr 2fr;
+                    | grid-template-columns: 8ch auto;
+
+=> Height and width:
+        For the content need to be displayed 100% to the available area, then use,
+                    | height: 100vh;
+                    | width: 100vw;
+        vh means viewport height and vw means viewport width.
+        Using 100% and 100vh or 100vw are not the same. 100% will means full space of 
+          the div or component but 100vh or 100vw means full space of the screen that 
+          remains.
+
+=> Conditional Styling:
+        The example is taken from TicTacToe Game for providing color for X, O.
+                    | const clr={
+                    |   color:val === 'X' ? 'red' : 'green',
+                    | }
+        Do's and Don'ts:
+          Conditional styling will be done inside the component but above the return. The variable clr will be called by an attribute called style.
+          - The attribute is not styles. style={clr} is the correct way.
+          - style={clr} -> it helps to provide the styling in inline.
+          Syntax for Conditional Styling -> ?:
+
+=> This styling helps to add hover effect and hand symbol instead of mouse pointer
+                    | .game-box{
+                    |   ...
+                    |   cursor:pointer;
+                    | }
+                    | .game-box:hover{
+                    |   background: hsl(0deg 0% 0% / 9%);
+                    | }
+
+=> Properties of box model:
+     From Center to Outwards,
+       Content -> Padding -> Border -> Margine -> Position
+
+=> Fixing the dark outline in the submit, like and dislike buttons by using focuse_outline,
+                    | .mui-restart-btn:focus{
+                    |   /* outline: none; */
+                    |   outline: 2px solid black;
+                    | }
+
+=> Img
+Data collected from the following blog
+https://www.webfx.com/blog/web-design/circular-images-css/#:~:text=The%20main%20CSS%20property%20responsible%20for%20the%20circular%20shape%20is,height%20results%20in%20a%20circle.
+  Square Images
+    .cls{
+      border-radius:50%;
+    }
+    can also be code as 
+    .cls{ 
+      border-top-left-radius: 50% 50%; 
+      border-top-right-radius: 50% 50%; 
+      border-bottom-right-radius: 50% 50%; 
+      border-bottom-left-radius: 50% 50%; 
+    }
+
+  Rectangle Landscape-oriented Images
+    .main_div {
+      display: inline-block; 
+      position: relative; 
+      width: 200px; 
+      height: 200px; 
+      overflow: hidden; 
+      border-radius: 50%; 
+     } 
+    .main_div img { 
+      width: auto; 
+      height: 100%; 
+      margin-left: -50px;
+    }
+
+  Rectangle Portrait-oriented Images
+    .main_div {
+      position: relative; 
+      width: 200px; 
+      height: 200px; 
+      overflow: hidden; 
+      border-radius: 50%; 
+    } 
+    .main_div img { 
+      width: 100%;
+      height: auto; 
+    } 
+

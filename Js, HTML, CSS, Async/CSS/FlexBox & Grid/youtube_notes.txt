@@ -1,0 +1,29 @@
+Q&A:
+- how to import the css to html file?
+Ans:                | <link rel="stylesheet" href="F&G.css">,
+     using the link tag, inside inside the head tag in
+       html. In the href attribute name of the css file will be added.
+       
+- how to specifies css-styling for all tag which don't have particular value for 
+  class-attribute ie:<div class="">
+Ans:                | div:not([class]){
+                    |   ...
+                    | }
+
+- Row and Column
+Ans: The horizontal arrangements of the number are called rows and the
+       vertical arrangement is called the column.
+
+- Row wise and Column wise   
+Ans: Row wise -> Starting from row1 then row2 then row...
+     - Row wise means top to bottom ie. verticle. Every subsequent row will be placed below the bottom of 
+         previous row.
+     Column wise -> Starting from column1 then column2 then column...
+     - Column wise meand left to right ie. horizontal. Every subsequent column will be placed to the right side
+         of the current column.
+
+- different between row, column and row wise and column wise
+Ans: row is horizontal 
+     column is verticle
+     row wise is verticle
+     column wise is horizontal
