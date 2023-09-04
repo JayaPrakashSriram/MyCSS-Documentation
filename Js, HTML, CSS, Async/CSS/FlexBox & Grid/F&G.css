@@ -60,3 +60,4 @@ div:not([class]){
     outline: 2px solid black;
     padding: 0.5em;
 }
+/* Above code will helps to select the child div which don't have any class attributes. */
