@@ -1,0 +1,97 @@
+/* FlexBox and Grid used to creatr layouts. But both serves in different purposes and having different strength
+     and weakness.
+*/
+/*
+   flex-direction: row; 
+     Each child ordered in each column or row wise. Here asked to the parent, to stay in row and its child in column.
+   grid-auto-flow: row; 
+     Each child ordered in each row r column wise. Here direction as been given directly to the child to be in rows.
+   - Flex will affect the parent and Grid will affect the child.
+*/
+
+.flexbox-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-container > * {
+  flex-grow: 1;
+  flex-basis:33%;
+}
+/* Initialy the content of the div shown in row or as column wise
+   PROVIDING:
+     Step1: display: flex; -> Now all the div as been shown in column or as row wise. Here every direct child will 
+                                become a column. When the entire get expanded then the elements too expanded
+                                respectively and when the elements got squesed, they will squesed automatically till
+                                a point and then it will breaks out of the screen. Instead of breaking out of the
+                                screen it needs to arranged the excess content in new column automatically. 
+                              The default value of the flex is row. If even specify that will do no change, which can
+                                be see in step2.
+     Step2: flex-direction: row; -> There is no changes. Now squesing them beyond a certain level will leads to over
+                                      flow and the content in the flex as partially hided.
+                                    In the step 1 & 2, it say that the class flex-container as to be shown as row 
+                                      and it's element will be columned. In other words, the parent instructed to act
+                                      as row, so that its direct child will act as columns.
+    Step3: flex-wrap: wrap; -> It prevents the over flow by creating new row for div, the overflow will be prevented
+                                 to a certain point.
+*/
+
+.grid-container{
+    display:grid;
+    /* grid-auto-flow:row; */
+    /* grid-auto-flow:column; */
+    /* grid-template-columns: 1fr lfr lfr 1fr 1fr; */
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: repeat(auto-fit, 1fr);
+}
+/* Initialy the content of the div shown in row or column wise
+   PROVIDING:
+     Step1: display: grid; -> It will do nothing, content of the div will remains row or column wise.
+     Step2: grid-auto-flow:row; -> There is no change. It is opposite to flex-direction:row; in display:flex; 
+              property. Here in, grid-auto-flow:row; instructed the each child to stay in each seperate row.
+     Step3: Command Step2
+            grid-auto-flow:column; -> Now all the div as been shown in column or as row wise. Now squesing them beyond
+              a certain level will leads to over flow and the content in the grid as partially hided.
+     Step4: Command Step3
+            grid-template-columns: 1fr lfr lfr 1fr 1fr; -> Here specification of how many column will be displayed
+                                                             as been done Earlier it as been done by browser on its
+                                                             own.
+     Step5: Command Step4
+            grid-templte-columns: repeat(5, 1fr); -> Simplified version of Step4. In Step4 and 5 columns will struck
+                                                      with the same no. of columns to a max level of squizing to a
+                                                      poin and remains same no. of columns for a exteded wide screen.
+                                                      Because the width of the column keeps changing to the screen 
+                                                      size. So width of the column is determined by screen size.
+     Step6: Command Step5
+            grid-template-columns: repeat(auto-fit, 1fr); -> Same result got in Step1 and 2.
+     Step7: Commad Step6
+            grid-template-colmns: repet(auto-fit, minmax(300px, 1fr)); -> Here columns don't struck in the same no. as
+                                                                            Step4 and 5, here the width of the column
+                                                                            will remains the same so the increased or
+                                                                            decreased screen size will change the 
+                                                                            position of the column.
+*/
+
+/* After step2 of flex and step3 of grid, both flex and grid are showned in column or as row wise. But spacing between 
+     div's is different but entire structure of grid and flex remains the same in browser toggle device tool bar. Grid
+     provides better spacing than flex.
+   After step3 of flex and step7 of grid:
+     flex is said to be a single dimentional layout because the way it control the layout is single dimentional. But
+       it actually can performes a two dimenstional layout structure.
+     In flex each of the row is independed to its next row, the size of the each column in a row is determined by the
+       width of the element. So differences in the elements of each column makes each column to different sizes and
+       each row had different no. of columns in different sizes, then the size of the row also be different due to it.
+     Grid is not works like flex as above. Below explaination explains the reason for grid is two dimentional.
+       The size of the each column remains 300px in width in all the rows without considering the size of the element.
+       Even when the screen gets extended or squesed the width of the each column remains the same. It brings a table
+       like structure.
+     flex is more flexibile and grid is more structured.
+     
+*/
+
+div:not([class]){
+    outline: 2px solid black;
+    padding: 0.5em;
+}
+/* Above code will helps to select the child div which don't have any class attributes. */
